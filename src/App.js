@@ -1,6 +1,6 @@
 
 import './App.css';
-import Todolist from './todolist';
+import Todolist from './Components/todolist';
 import React, { useState } from 'react';
 import AppBar from'@material-ui/core/AppBar';
 import Tabs from'@material-ui/core/Tabs';

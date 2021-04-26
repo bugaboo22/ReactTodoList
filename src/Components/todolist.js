@@ -12,8 +12,7 @@ import 'ag-grid-community/dist/styles/ag-grid.css';
 function Todolist() {
   const [todo, setTodo] = useState({description: '', date: '', priority:''});
   const [todos, setTodos] = useState([]);
-  const [selectedDate, handleDateChange] = useState(new Date());
-
+  
   const gridRef = useRef();
 
   const newDate = (date) => {
@@ -50,7 +49,7 @@ function Todolist() {
     <div>
       <input type="text" onChange={inputChanged} placeholder="Description" name="description" value={todo.description}/>
       <MuiPickersUtilsProvider utils={DateFnsUtils}>
-        <DatePicker value={selectedDate} onChange={date => newDate(date)}/>
+        <DatePicker value={todo.selectedDate} onChange={newDate}/>
       </MuiPickersUtilsProvider>
       <input type="text" onChange={inputChanged} placeholder="Priority" name="priority" value={todo.priority}/>
       <Button onClick={addTodo} color="primary">Add</Button>
